@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+ <bean id="rateInfoObj" class="com.springxml.app.GoldRateInfo">
+ 	<property name="rateInfo">
+ 		<map>
+ 			<entry key="18" value="5003.00"/>
+ 			<entry key="22" value="6115.00"/>
+ 			<entry key="24" value="6671.00"/>
+ 		</map>
+ 	</property>
+ </bean>
+ 
+</beans>
