@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Define the CreditCardPayment bean -->
+    <bean id="creditCardPayment" class="org.tnsif.springioc.CreditCardPayment"/>
+
+    <!-- Define the GPayPayment bean -->
+    <bean id="gpayPayment" class="org.tnsif.springioc.GPayPayment"/>
+
+    <!-- Choose one of the payment methods for PaymentProcessor -->
+    <bean id="paymentProcessor" class="org.tnsif.springioc.PaymentProcessor">
+        <constructor-arg ref="creditCardPayment"/> <!-- Change this to gpayPayment for GPay -->
+        <constructor-arg name="process" value="ModeOfPayment"></constructor-arg>
+       
+    </bean>
+
+</beans>

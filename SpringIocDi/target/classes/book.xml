@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Define Book beans -->
+    <bean id="bookOne" class="org.tnsif.springdi.Book">
+    	<constructor-arg value="101"/>
+        <constructor-arg value="The Secret"/>
+        <constructor-arg value="Rhonda Byrne"/>
+    </bean>
+
+    <bean id="bookTwo" class="org.tnsif.springdi.Book">
+        <constructor-arg value="102"/>
+        <constructor-arg value="The Kite Runner"/>
+        <constructor-arg value="Khaleed Hosseini"/>
+    </bean>
+
+    <bean id="bookThree" class="org.tnsif.springdi.Book">
+    	<constructor-arg value="103"/>
+        <constructor-arg value="To Kill a Mockingbird"/>
+        <constructor-arg value="Harper Lee"/>
+    </bean>
+
+    <!-- Library bean with constructor injection -->
+    <bean id="library" class="org.tnsif.springdi.Library">
+        <constructor-arg>
+            <list>
+                <ref bean="bookOne"/>
+                <ref bean="bookTwo"/>
+                <ref bean="bookThree"/>
+            </list>
+        </constructor-arg>
+    </bean>
+
+</beans>
